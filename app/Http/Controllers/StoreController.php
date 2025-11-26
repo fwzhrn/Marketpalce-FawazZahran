@@ -114,7 +114,7 @@ class StoreController extends Controller
         $validate = $request->validate([
             'nama_toko' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:1000',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
             'alamat' => 'required|string|max:500',
             'kontak_toko' => 'required|string|max:15',
             'users_id' => 'required|unique:stores|exists:users,id',

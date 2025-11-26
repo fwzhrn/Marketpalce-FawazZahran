@@ -49,7 +49,7 @@ class ProductController extends Controller
             'stok' => 'required|integer',
             'deskripsi' => 'required|string',
             'tanggal_upload' => 'nullable|date',
-            'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'gambar.*' => 'required|image|mimes:jpeg,png,jpg|max:4096'
         ]);
         $product = Product::create([
             'categories_id' => $request->categories_id,
@@ -84,7 +84,7 @@ class ProductController extends Controller
             'harga' => 'required|integer',
             'stok' => 'required|integer',
             'deskripsi' => 'required|string',
-            'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
         ]);
 
         $product->update([$validate]);
