@@ -6,23 +6,43 @@
     --accent-2: #112D4E;
     --bg: #F9F7F7;
     --muted: #6c757d;
-    --section-gap: 1.5rem; /* ubah kalau mau lebih rapat/longgar */
-}
+    --section-gap: 1.5rem;
 
-/* Jangan set font-family di sini supaya mewarisi font dari layout/navbar.
-   Jika ingin pakai font spesifik (Contoh: Poppins), beri tahu dan aku tambahkan @import dan rule global. */
+    /* tinggi navbar jika fixed */
+    --navbar-height: 64px;
+}
 
 body {
     background-color: var(--bg);
     margin: 0;
 }
 
-/* Jumbotron - itemku */
+/* Kontainer utama — lebar maksimum sama dengan halaman produk */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: var(--section-gap);
+}
+
+/* Hapus padding-top untuk container pertama agar tidak dobel */
+.container:first-of-type {
+    padding-top: 0;
+}
+
+/* Geser isi jika navbar fixed */
+.site-content {
+    padding-top: max(8px, calc(var(--navbar-height) - 24px));
+}
+
+/* Jumbotron (header besar) */
 .jumbotron {
     background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-1) 100%);
     color: #F9F7F7;
     padding: 2.25rem 1.5rem;
-    border-radius: 15px;
+    border-radius: 0 0 30px 30px;
     box-shadow: 0 8px 20px rgba(17, 45, 78, 0.18);
     margin-bottom: 1.25rem;
 }
@@ -43,7 +63,7 @@ body {
     opacity: 0.6;
 }
 
-/* Tombol Primary */
+/* Tombol utama */
 .btn-primary {
     background-color: var(--accent-1);
     border-color: var(--accent-1);
@@ -61,7 +81,7 @@ body {
     box-shadow: 0 4px 12px rgba(63, 114, 175, 0.22);
 }
 
-/* Tombol Lihat Semua */
+/* Tombol "Lihat Semua" */
 .btn-lihat {
     background-color: #DBE2EF;
     color: var(--accent-2);
@@ -79,16 +99,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Section headers & spacing */
-.container {
-    padding-top: var(--section-gap);
-    padding-bottom: var(--section-gap);
-}
-
-/* HAPUS rule bermasalah sehingga first section tidak mendapat extra padding */
-/* section.container:first-of-type { padding-top: 3rem; } */
-
-/* Card Styling */
+/* Card dasar */
 .card {
     border: none;
     border-radius: 12px;
@@ -112,7 +123,7 @@ body {
     padding: 1.15rem;
 }
 
-/* Tombol Dark (Kunjungi) */
+/* Tombol "Kunjungi" pada kartu toko */
 .btn-dark {
     background-color: var(--accent-2);
     border-color: var(--accent-2);
@@ -121,7 +132,7 @@ body {
     font-weight: 500;
 }
 
-/* Image Styling */
+/* Gaya gambar pada kartu */
 .card-img-top {
     border-radius: 12px 12px 0 0;
     transition: transform 0.22s ease;
@@ -131,57 +142,63 @@ body {
     transform: scale(1.03);
 }
 
-/* Toko Card - Icon Container */
+/* Ikon di kartu toko */
 .card-body .rounded-3 {
     background-color: #DBE2EF;
     border: 2px solid var(--accent-1);
 }
 
-/* Price Styling */
+/* Harga */
 .card-body strong {
     color: var(--accent-1);
     font-size: 1.05rem;
 }
 
-/* WhatsApp Button Styling */
+/* Tombol WA (opsional ikon) */
 .btn-primary .bi-whatsapp {
     color: #25D366 !important;
 }
 
-/* Icons Color */
+/* Warna ikon */
 .bi-geo-alt-fill,
 .fa-brands.fa-whatsapp,
 .fa-solid.fa-user {
     color: var(--accent-1);
 }
 
-/* Small Text Styling */
+/* Teks kecil */
 small.text-muted {
     color: var(--muted) !important;
     font-size: 0.875rem;
 }
 
-/* Shadow Utilities */
+/* Bayangan kecil */
 .shadow-sm {
     box-shadow: 0 2px 8px rgba(17, 45, 78, 0.06) !important;
 }
 
-/* Link Styling */
-.nav-link {
+/* Nav pill hover ringan */
+.nav-link.nav-pill,
+.nav-pills .nav-link {
     transition: opacity 0.18s ease;
 }
 
-.nav-link:hover {
+.nav-link.nav-pill:hover,
+.nav-pills .nav-link:hover {
     opacity: 0.85;
 }
 
-/* Stock Info */
+/* Link produk tidak mewarisi style nav bootstrap */
+a.product-link { text-decoration: none; color: inherit; display: block; }
+a.product-link:hover { opacity: 0.95; }
+
+/* Info stok */
 .card-body .small {
     color: var(--muted);
     font-weight: 500;
 }
 
-/* Spacing Adjustments */
+/* Spacing utilitas */
 .mt-lg-5 {
     margin-top: 3rem !important;
 }
@@ -198,30 +215,27 @@ small.text-muted {
     .mt-lg-5 {
         margin-top: 1.5rem !important;
     }
+
+    /* Kurangi offset di mobile */
+    .site-content { padding-top: calc(56px - 8px); }
+
+    .container:first-of-type { padding-top: 0; }
 }
 
-/* Button Group in Product Card */
+/* Tombol grup di kartu produk */
 .card .d-flex.p-2 {
     background-color: var(--bg);
     border-top: 1px solid #DBE2EF;
 }
 
-/* Hover Effect for Store Name */
+/* Hover nama toko */
 .card-title:hover {
     color: var(--accent-1);
     transition: color 0.2s ease;
 }
-
-/* OPTIONAL:
-   Jika navbar layout-mu masih fixed-top dan menutupi sebagian konten,
-   tambahkan class `main-offset` pada <main> wrapper dan set --navbar-height sesuai.
-   Contoh:
-   :root { --navbar-height: 72px; }
-   .main-offset { padding-top: var(--navbar-height); }
-*/
 </style>
 
-<main class="site-content"><!-- jangan set main-offset kecuali perlu -->
+<main class="site-content">
     <section class="container">
         <div class="jumbotron">
             <h1 class="display-4">itemku</h1>
@@ -234,7 +248,7 @@ small.text-muted {
         </div>
     </section>
 
-    <!-- PRODUK TERBARU (DI ATAS) -->
+    <!-- Produk terbaru -->
     <section class="container">
         <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-between mb-3">
             <div class="mb-2 mb-md-0">
@@ -250,7 +264,8 @@ small.text-muted {
             @foreach($products as $p)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="card h-100 shadow-sm border-0">
-                        <a href="{{ route('produk.detail', Crypt::encrypt($p->id)) }}" class="nav-link">
+                        <!-- Gunakan product-link agar tidak terpengaruh nav -->
+                        <a href="{{ route('produk.detail', Crypt::encrypt($p->id)) }}" class="product-link">
                             <img src="{{ $p->imageProducts->first() ? asset('storage/gambar-produk/' . $p->imageProducts->first()->nama_gambar) : asset('asset/image/SkoolaAssets/no-image.png') }}" 
                                  class="card-img-top" 
                                  alt="{{ $p->nama_produk }}" 
@@ -273,7 +288,7 @@ small.text-muted {
         </div>
     </section>
 
-    <!-- TOKO TERBARU (DI BAWAH) -->
+    <!-- Toko terbaru -->
     <section class="container">
         <div class="d-flex flex-column flex-md-row align-items-md-start justify-content-between mb-3">
             <div class="mb-2 mb-md-0">
@@ -293,6 +308,7 @@ small.text-muted {
                             <div class="d-flex align-items-start mb-3">
                                 <div class="rounded-3 d-flex align-items-center justify-content-center me-3"
                                     style="width:54px;height:54px;overflow:hidden;">
+                                    <!-- Gambar toko -->
                                     <img src="{{ asset('storage/gambar-toko/' . $item->gambar) }}"
                                         style="object-fit: cover; width: 100%; height: 100%;" alt="{{ $item->nama_toko }}">
                                 </div>
