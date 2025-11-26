@@ -364,13 +364,13 @@
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <h6 class="fw-semibold mb-3">Kategori Populer</h6>
+                        {{-- <h6 class="fw-semibold mb-3">Kategori Populer</h6>
                         <ul class="list-unstyled text-muted">
                             <li><a href="#" class="text-decoration-none text-muted">Alat Tulis</a></li>
                             <li><a href="#" class="text-decoration-none text-muted">Seragam Sekolah</a></li>
                             <li><a href="#" class="text-decoration-none text-muted">Perlengkapan Kelas</a></li>
                             <li><a href="#" class="text-decoration-none text-muted">Buku Pelajaran</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                     <div class="col-md-3">
                         <h6 class="fw-semibold mb-3">Hubungi Kami</h6>

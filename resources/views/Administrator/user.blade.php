@@ -396,7 +396,6 @@ hr {
     </div>
 </div>
 
-<!-- DataTables init (ensure jQuery + DataTables loaded in layout) -->
 <script>
     $(document).ready(function () {
         $('#example').DataTable({
