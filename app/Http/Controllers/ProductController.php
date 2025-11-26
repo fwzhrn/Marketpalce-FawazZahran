@@ -87,7 +87,6 @@ class ProductController extends Controller
             'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
         ]);
 
-        // ❗ Perbaikan
         $product->update($validate);
 
         if ($request->hasFile('gambar')) {
