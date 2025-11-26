@@ -375,14 +375,10 @@ hr {
                         <td>{{ $item->kontak }}</td>
                         <td>{{ ucfirst($item->role) }}</td>
                         <td>
-                            <!-- Edit: buka modal edit (ID modal tetap memakai $item->id) -->
                             <a data-bs-toggle="modal" data-bs-target="#editUser{{ $item->id }}" class="btn-table-outline btn-sm" title="Edit">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
 
-                            <!-- PERUBAHAN: link delete sekarang pakai ID plain (tanpa encrypt) -->
-                            <!-- Jika route delete Anda menggunakan GET (tidak RESTful), link ini akan bekerja.
-                                 Namun saya tetap menyarankan menggunakan form dengan DELETE untuk RESTful. -->
                             <form action="{{ route('user.delete', $item->id) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Hapus data ini?')">
                                 @csrf
                                 @method('DELETE')
