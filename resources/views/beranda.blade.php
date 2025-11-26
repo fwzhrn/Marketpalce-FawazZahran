@@ -239,7 +239,7 @@ a.product-link:hover { opacity: 0.95; }
     <section class="container">
         <div class="jumbotron">
             <h1 class="display-4">itemku</h1>
-            <p class="lead">Tempat terbaik untuk membeli dan menjual kebutuhan sekolah secara mudah, aman, dan terpercaya.</p>
+            <p class="lead">Tempat terbaik untuk belanja disekolah secara mudah, aman, dan terpercaya.</p>
             <hr class="my-4">
             <p>Lengkapi kebutuhan sekolahmu, dari alat tulis hingga seragam, hanya di itemku!</p>
             <p class="lead">
