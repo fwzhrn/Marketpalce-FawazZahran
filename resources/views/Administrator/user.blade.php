@@ -383,18 +383,15 @@ hr {
                             <!-- PERUBAHAN: link delete sekarang pakai ID plain (tanpa encrypt) -->
                             <!-- Jika route delete Anda menggunakan GET (tidak RESTful), link ini akan bekerja.
                                  Namun saya tetap menyarankan menggunakan form dengan DELETE untuk RESTful. -->
-                            <a href="{{ route('user.delete', $item->id) }}" onclick="return confirm('Hapus data ini?')" class="btn-table-outline btn-sm" title="Hapus">
-                                <i class="bi bi-trash-fill"></i>
-                            </a>
-
-                            <!--
-                            Alternatif RESTful (disarankan):
-                            <form action="{{ route('user.delete', $item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Hapus data ini?')">
+                            <form action="{{ route('user.delete', $item->id) }}" method="POST" style="display:inline-block" onsubmit="return confirm('Hapus data ini?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn-table-outline btn-sm" title="Hapus"><i class="bi bi-trash-fill"></i></button>
+                                <button type="submit" class="btn-table-outline btn-sm" title="Hapus">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
                             </form>
-                            -->
+
+                            
                         </td>
                     </tr>
                 @endforeach

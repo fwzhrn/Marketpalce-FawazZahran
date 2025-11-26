@@ -87,20 +87,24 @@ class ProductController extends Controller
             'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg|max:4096',
         ]);
 
-        $product->update([$validate]);
+        // ❗ Perbaikan
+        $product->update($validate);
 
         if ($request->hasFile('gambar')) {
             foreach ($request->file('gambar') as $img) {
                 $filename = time() . '_' . uniqid() . '.' . $img->getClientOriginalExtension();
                 $img->storeAs('public/gambar-produk', $filename);
+
                 ImageProduct::create([
                     'products_id' => $product->id,
                     'nama_gambar' => $filename,
                 ]);
             }
         }
+
         return redirect()->back()->with('pesan', 'Produk berhasil diupdate!');
     }
+
 
     public function Delete($id){
         $id = $this->decrypId($id);

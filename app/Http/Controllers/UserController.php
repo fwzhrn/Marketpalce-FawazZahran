@@ -60,8 +60,7 @@ class UserController extends Controller
         }
     }
 
-    public function Delete(String $id){
-        $id = $this->decrypId($id);
+    public function Delete(string $id){
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->back()->with('pesan', 'User berhasil dihapus.');

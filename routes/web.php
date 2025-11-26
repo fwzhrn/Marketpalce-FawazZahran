@@ -26,7 +26,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/user', [AdminController::class, 'User'])->name('user');
     Route::post('/admin/user/create', [UserController::class, 'Store'])->name('user.store');
     Route::put('/admin/user/update/{id}', [UserController::class, 'Update'])->name('user.update');
-    Route::get('/admin/user/delete/{id}', [UserController::class, 'Delete'])->name('user.delete');
+    Route::delete('/admin/user/delete/{id}', [UserController::class, 'Delete'])->name('user.delete');
     
     Route::get('/admin/toko', [AdminController::class, 'Toko'])->name('toko.admin');
     Route::post('/admin/toko/create', [StoreController::class, 'Store'])->name('toko.admin.store');

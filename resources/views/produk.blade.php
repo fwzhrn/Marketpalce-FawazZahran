@@ -236,7 +236,7 @@
         <div class="col-md-3 mb-4">
             <div class="filter-card">
                 <h6>Kategori</h6>
-                <ul class="nav nav-pills flex-column">
+                <ul class="nav nav-pills">
                     @foreach ($category as $key => $item)
                         <li class="nav-item">
                             <a class="nav-link {{ $key == 0 ? 'active' : '' }}"
