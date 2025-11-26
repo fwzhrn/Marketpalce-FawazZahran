@@ -1,0 +1,11 @@
+:root {
+    --black: #020202ff;
+    --dark-green: #0d2818ff;
+    --pakistan-green: #04471cff;
+    --sea-green: #058c42ff;
+    --malachite: #16db65ff;
+}
+
+.text-ijo {
+    color: var(--malachite);
+}

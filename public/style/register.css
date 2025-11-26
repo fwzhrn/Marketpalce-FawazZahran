@@ -1,0 +1,93 @@
+:root {
+    --black: #020202ff;
+    --dark-green: #0d2818ff;
+    --pakistan-green: #04471cff;
+    --sea-green: #058c42ff;
+    --malachite: #16db65ff;
+}
+
+*, body, html {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.page-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-card{
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 2.0rem;
+    box-shadow: 0 18px 40px rgba(2,2,2,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.login-card h3{ 
+    color: var(--black); 
+    font-weight: 700; 
+    margin-bottom: 0.2rem; 
+}
+
+.login-card label { 
+    display:block; 
+    margin-bottom: .35rem; 
+    font-weight: 600; 
+    color: #222; 
+}
+.login-card .form-control{
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    padding: 12px 14px;
+    border: 1.5px solid rgba(0,0,0,0.12);
+    box-shadow: none;
+    transition: border-color .12s, box-shadow .12s;
+}
+.login-card .form-control:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(22,219,101,0.06);
+}
+
+.btn-login{
+    background: var(--black);
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px 14px;
+    width: 100%;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 6px 20px rgba(2,2,2,0.08);
+}
+.btn-login:hover{
+    background: var(--black);
+    color: #fff;
+}
+
+.text-register { 
+    margin-top: 0.9rem; 
+    font-size: .95rem; 
+}
+.text-register a { 
+    color: var(--malachite); 
+    font-weight: 700; 
+    text-decoration: none; 
+}
+.text-register a:hover { 
+    text-decoration: underline; 
+}
+
+@media (max-width:420px){
+    .login-card { 
+        padding: 1.25rem; 
+        border-radius: 14px; 
+    }
+}

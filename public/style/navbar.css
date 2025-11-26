@@ -1,0 +1,60 @@
+:root {
+    --black: #020202ff;
+    --dark-green: #0d2818ff;
+    --pakistan-green: #04471cff;
+    --sea-green: #058c42ff;
+    --malachite: #16db65ff;
+}
+
+*, body, html {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    color: var(--black);
+    font-weight: bold;
+}
+
+.btn {
+    padding: 8px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--black);
+    color: white;
+    border: 2px solid var(--black);
+}
+
+.btn-primary:hover {
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+.btn-primary:active {
+    background-color: var(--black) !important;
+    border-color: var(--black) !important;
+}
+
+.btn-outline {
+    background-color: white;
+    color: var(--malachite);
+    border: 2px solid var(--malachite);
+}
+
+.btn-outline:hover {
+    background-color: var(--malachite);
+    color: white;
+}
+
+footer {
+    background-color: #f8f9fa;
+}
+
